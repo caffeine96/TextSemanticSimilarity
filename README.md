@@ -71,7 +71,7 @@ print(sentencesimilarity)
 
 ## Second Order Co-occurrence Pointwise Mutual Information (SOC-PMI)-
 
-It is a corpus-based learning model. We have used the State Union corpus from the Natural Language ToolKit Corpora. We have trained 20 speeches from the same having approximately 75000 words and about which 8000 are unique (after lemmatizing and excluding all stop words). These are stored as pickles to avoid re-training in future.
+It is a corpus-based learning model. We have used the State Union corpus from the Natural Language ToolKit Corpora. We have trained 20 speeches from the same having approximately 200000 words and about which 13000 are unique (after lemmatizing and excluding all stop words). These are stored as pickles to avoid re-training in future.
 ```python
 #Lemmatizing words and adding to the final array if they are not stopwords
 for w in words:
