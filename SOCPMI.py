@@ -13,17 +13,18 @@ def SemanticSimilarity(w1,w2,a,delta,gamma):
 
 	#Getting the unique words(types)
 	unique= unique_list(filtered_text)
-
-	print("Hang on a second!")
+	
 	m=len(filtered_text)
-	print("Corpus Words: ",m)
-	print("Unique Words(Types): ",len(unique))
+
 
 	#Dictionary for frequency of words
-	typefr={}
-	for w in unique:
-		typefr[w]=type_frequency(w,filtered_text)
-
+	#typefr={}
+	#for w in unique:
+	#	typefr[w]=type_frequency(w,filtered_text)
+	
+	typefr=collections.Counter()
+	for w in filtered_text:
+		typefr[w]+=1
 	#print(typefr)
 	if w1 not in unique:
 		return 0
@@ -86,8 +87,8 @@ def SemanticSimilarity(w1,w2,a,delta,gamma):
 
 	betasumw1=0
 	betasumw2=0
-	for i in range(0,b1+1):
-		for j in range(0,b2+1):
+	for i in range(0,b1):
+		for j in range(0,b2):
 			if pmiw1_sorted[i]==pmiw2_sorted[j]:
 				betasumw1+=math.pow(pmiw2[pmiw1_sorted[i]],gamma)
 				betasumw2+=math.pow(pmiw1[pmiw1_sorted[i]],gamma)		
