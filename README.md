@@ -2,6 +2,10 @@
 
 The idea of the project is to devsing a metric for measuring semantic similarity between words, sentences and ultimately documents. There are many approaches to this NLP problem- finding out word frequency matrix and applying SVM, reducing the dimensions and finally applying Latent Semantic Analysis to find cosines of row vectors hence measuring the similarity. Our approach is of a corpus-based modeling technique that uses Second Order Co-occurence Pointwise Mutual Information along side certain syntactic similarity measures to measure the overall semantic similarity between two sentences.
 
+## Requirements
+- Python 3.0+
+- NLTK 3.0+
+
 ## Implementation
 
 Consider two sentences: 
@@ -51,7 +55,9 @@ Next, we need to find out the syntatic/lexical similarities between list of word
 These measures are summed over using appropriate weights(which sum to 1) and the final syntactic matrix is created of size length of *s1* x length of *s2*. 
 
 
-Next, we move calculate the semantic similarity. We use SOC-PMI for the purpose. The details of the method are given in the following section:
+Next, we move to calculate the semantic similarity. We use SOC-PMI for the purpose. The details of the method are given in the next section. The SOC- PMI method returns a normalized semantic measure for each combination of words. These measures are stored in a matrix of size length of *s1* x length of *s2*. 
+
+The two matrices are averaged. The resulting matrix is the searched for maximum value. Once the maximum value is found, it is stored and the row and column containing that column is eliminated 
 
 
 
