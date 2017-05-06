@@ -49,3 +49,23 @@ Next, we need to find out the syntatic/lexical similarities between list of word
 3. Normalized Longest Common Consecutive Subsequence(NLCCS) from any letter-It takes the longest consecutive subsequence from the firt letter. For the semantic and semaantc it would again be 4(sema). It is then normalized.
 
 These measures are summed over using appropriate weights(which sum to 1) and the final syntactic matrix is created of size length of *s1* x length of *s2*. 
+
+
+Next, we move calculate the semantic similarity. We use SOC-PMI for the purpose. The details of the method are given in the following section:
+
+
+
+## Second Order Co-occurrence Pointwise Mutual Information (SOC-PMI)-
+
+It is a corpus-based learning model. We have used the State Union corpus from the Natural Language ToolKit Corpora. We have trained 20 speeches from the same having approximately 75000 words and about which 8000 are unique (after lemmatizing and excluding all stop words). These are stored as pickles to avoid re-training in future.
+```python
+#Lemmatizing words and adding to the final array if they are not stopwords
+for w in words:
+    if w not in stop_words:
+	    w=lemmatizer.lemmatize(w)		
+	    filtered_text.append(w)
+```
+
+![Words](https://github.com/caffeine96/TextSemanticSimilarity/blob/master/TSS%20Snips/Corpus%20Words.png?raw=true)
+
+![Corpus Training Code](https://github.com/caffeine96/TextSemanticSimilarity/blob/master/Corpus-Train.py)
