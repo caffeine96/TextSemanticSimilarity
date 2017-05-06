@@ -158,6 +158,30 @@ for i in range(0,b1):
 		for j in range(0,b2):
 			if pmiw1_sorted[i]==pmiw2_sorted[j]:
 				betasumw1+=math.pow(pmiw2[pmiw1_sorted[i]],gamma)
+similarity= betasumw1/b1 + betasumw2/b2				
 ```
 
+The final similarity needs to be normalized between 0 and 1. A lambda value is imported from a local file. The lambda value is updated with the maximum value of PMI the algorithm received in its life time. The normalized similarity measure is then returned.
 
+```python
+target=open("Lambda.txt","r")
+lmbda=float(target.read())
+target.close()
+
+similarity,lmbda= normalized_similarity(similarity,lmbda)
+
+target=open("Lambda.txt","w")
+target.write(str(lmbda))
+target.close()
+
+return similarity
+```
+
+```python
+#Returning Normalized Similarity
+def normalized_similarity(similarity,lmbda):
+	if similarity>lmbda:
+		lmbda=math.ceil(similarity)
+	similarity/=lmbda
+	return similarity,lmbda
+```
