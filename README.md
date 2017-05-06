@@ -6,7 +6,7 @@ The idea of the project is to devsing a metric for measuring semantic similarity
 
 Consider two sentences: 
 ```markdown
-`s1="The world knows it has lost a heroic champion of justice and freedom"
-s2="The earth recognizes the loss of a valliant champoin of independence and justice"`
+s1="The world knows it has lost a heroic champion of justice and freedom"
+s2="The earth recognizes the loss of a valliant champoin of independence and justice"
 [Link](url) and ![Image](src)
 ```
