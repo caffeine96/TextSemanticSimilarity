@@ -36,7 +36,5 @@ from Auxiliary import Commonwords, DisplayMatrixform
 common,s1,s2=Commonwords(sent1,sent2)
 ```
 
-![Output]()
-
 [Commonwords Code](https://github.com/caffeine96/TextSemanticSimilarity/blob/master/Auxiliary.py)
 
