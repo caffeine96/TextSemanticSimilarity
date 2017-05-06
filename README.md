@@ -10,6 +10,7 @@ s1="The world knows it has lost a heroic champion of justice and freedom"
 s2="The earth recognizes the loss of a valliant champoin of independence and justice"
 ```
 
+
 We tokenize, lemmatize and remove stopwords, which gives us a refined list of words:
 ```python
 from Cleaner import clean
@@ -23,11 +24,13 @@ sent2=clean(s2)
 [Cleaner Code](https://github.com/caffeine96/TextSemanticSimilarity/blob/master/Cleaner.py)
 
 
+
 Length of both the lists are maintained:
 ```python 
 m=len(sent1)
 n=len(sent2)
 ```
+
 
 Common words in both the lists are identified and extracted. These common words are then subtracted from the original lists. Now, the syntactic and semantic similarlity tests measurement methods are operated on the remaing lists given below as *s1* and *s2*. Go on the link below for the Commonwords code:
 ```python
@@ -38,4 +41,5 @@ common,s1,s2=Commonwords(sent1,sent2)
 ![Output](https://github.com/caffeine96/TextSemanticSimilarity/blob/master/TSS%20Snips/CommonWords.png)
 
 [Commonwords Code](https://github.com/caffeine96/TextSemanticSimilarity/blob/master/Auxiliary.py)
+
 
