@@ -57,8 +57,11 @@ These measures are summed over using appropriate weights(which sum to 1) and the
 
 Next, we move to calculate the semantic similarity. We use SOC-PMI for the purpose. The details of the method are given in the next section. The SOC- PMI method returns a normalized semantic measure for each combination of words. These measures are stored in a matrix of size length of *s1* x length of *s2*. 
 
-The two matrices are averaged. The resulting matrix is the searched for maximum value. Once the maximum value is found, it is stored and the row and column containing that column is eliminated 
+The two matrices are averaged. The resulting matrix is the searched for maximum value. Once the maximum value is found, it is stored and the row and column containing that column is eliminated. The process is repeated with the remaining matrix till the entire matrix gets eliminated. All the maximum values are summed over.
 
+[Similarity Count Code](https://github.com/caffeine96/TextSemanticSimilarity/blob/master/SimilarityCount.py)
+
+To calculate the overall sentence similarity
 
 
 ## Second Order Co-occurrence Pointwise Mutual Information (SOC-PMI)-
