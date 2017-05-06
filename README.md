@@ -145,3 +145,10 @@ pmiw1={}
 		pmiw1[t]= math.log(neighboursw1[t]*m/(typefr[t]*typefr[w1]),2)
 pmiw1_sorted = sorted(pmiw1, key=pmiw1.get, reverse=True)
 ```
+
+Beta 1 and Beta 2 are calcuated. We have arranged the neighbour words in decreasing order of PMI. Now the values at the back tend to be very small and can be neglected. Hence we select only the first Beta 1 values. These become the *feature* words 
+
+```python
+b1= math.floor((math.pow(math.log10(typefr[w1]),2)* math.log(len(unique),2))/delta)
+```
+
