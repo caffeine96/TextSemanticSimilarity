@@ -5,20 +5,20 @@ The idea of the project is to devsing a metric for measuring semantic similarity
 ## Implementation
 
 Consider two sentences: 
-```markdown
+```python
 s1="The world knows it has lost a heroic champion of justice and freedom"
 s2="The earth recognizes the loss of a valliant champoin of independence and justice"
 ```
 
 We tokenize, lemmatize and remove stopwords, which gives us a refined list of words:
-```
+```python
 from Cleaner import clean
 
 #Removing punctuations, stopwords and storing important words in a list
 sent1=clean(s1)
 sent2=clean(s2)
 
-![Image](https://github.com/caffeine96/TextSemanticSimilarity/blob/master/TSS%20Snips/Cleaning.png)
+![Output](TextSemanticSimilarity/TSS Snips/Cleaning.png)
 ```
 
 
