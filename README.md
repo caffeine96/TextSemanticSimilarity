@@ -43,3 +43,9 @@ common,s1,s2=Commonwords(sent1,sent2)
 [Commonwords Code](https://github.com/caffeine96/TextSemanticSimilarity/blob/master/Auxiliary.py)
 
 
+Next, we need to find out the syntatic/lexical similarities between list of words in *s1* and *s2*. This is to reduce penalising spelling mistakes. Three measures are taken into consideration: 
+1. Normalized Longest Common Subsequence(NLCS)- To figure out longest non-consecutive subsequence length. For Example, for semantic and semaantc, it will be 7(semantc). Normalizing is squaring the length of the subsequence and dividing by the product of lengths of the two words.
+2. Normalized Longest Common Consecutive Subsequence(NLCCS) from first letter- It takes the longest consecutive subsequence from the firt letter. For the semantic and semaantc it would be 4(sema). It is then normalized.
+3. Normalized Longest Common Consecutive Subsequence(NLCCS) from any letter-It takes the longest consecutive subsequence from the firt letter. For the semantic and semaantc it would again be 4(sema). It is then normalized.
+
+These measures are summed over using appropriate weights(which sum to 1) and the final syntactic matrix is created of size length of *s1* x length of *s2*. 
