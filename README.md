@@ -38,7 +38,7 @@ from Auxiliary import Commonwords, DisplayMatrixform
 #Getting the list of common words and the removal of those words from the original list
 common,s1,s2=Commonwords(sent1,sent2)
 ```
-![Output](https://github.com/caffeine96/TextSemanticSimilarity/blob/master/TSS%20Snips/CommonWords.png)
+![Output](https://github.com/caffeine96/TextSemanticSimilarity/blob/master/TSS%20Snips/CommonWords.png?raw=true)
 
 [Commonwords Code](https://github.com/caffeine96/TextSemanticSimilarity/blob/master/Auxiliary.py)
 
