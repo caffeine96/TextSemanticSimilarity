@@ -87,7 +87,7 @@ else:
 
 ![Output](https://github.com/caffeine96/TextSemanticSimilarity/blob/master/TSS%20Snips/Semantic%20Matrix.png?raw=true)
 
-The two matrices are averaged. The resulting matrix is the searched for maximum value. Once the maximum value is found, it is stored and the row and column containing that column is eliminated. The process is repeated with the remaining matrix till the entire matrix gets eliminated. All the maximum values are summed over.
+The two matrices are multiplied by weights(sums to 1) and added. The weight decided whether the algorithm stresses on the syntactic or the semantic part or is balanced. The resulting matrix is the searched for maximum value. Once the maximum value is found, it is stored and the row and column containing that column is eliminated. The process is repeated with the remaining matrix till the entire matrix gets eliminated. All the maximum values are summed over.
 
 ![Output](https://github.com/caffeine96/TextSemanticSimilarity/blob/master/TSS%20Snips/Summation.png?raw=true)
 
