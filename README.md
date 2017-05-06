@@ -116,3 +116,32 @@ for w in words:
 ![Words](https://github.com/caffeine96/TextSemanticSimilarity/blob/master/TSS%20Snips/Corpus%20Words.png?raw=true)
 
 [Corpus Training Code](https://github.com/caffeine96/TextSemanticSimilarity/blob/master/Corpus-Train.py)
+
+
+The frequency of each word is stored in a Python dictionary:
+```python
+typefr=collections.Counter()
+	for w in filtered_text:
+		typefr[w]+=1
+```
+
+Supppose we need to find semantic similarity between *w1* and *w2*. The frequency of words neighbouring the w1 and w2 are calculated. *a* neighbours before and after *w1* and *w2* are taken under consideration. 
+
+```python
+neighboursw1=collections.Counter()
+	n2w1=[]
+	for i in range(len(filtered_text)):
+		if w1==filtered_text[i]:
+			neighboursw1[filtered_text[i]]+=1
+			for j in range(0,a+1):
+				neighboursw1[filtered_text[i+j]]+=1
+				neighboursw1[filtered_text[i-j]]+=1
+```
+
+The PMI values are calculated. And all the neighbour terms are sorted in decreasing order of PMI values. Note that there will be two seperate lists one for *w1* and another for *w2*
+```python
+pmiw1={}
+	for t in neighboursw1.keys():
+		pmiw1[t]= math.log(neighboursw1[t]*m/(typefr[t]*typefr[w1]),2)
+pmiw1_sorted = sorted(pmiw1, key=pmiw1.get, reverse=True)
+```
