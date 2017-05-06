@@ -61,7 +61,12 @@ The two matrices are averaged. The resulting matrix is the searched for maximum 
 
 [Similarity Count Code](https://github.com/caffeine96/TextSemanticSimilarity/blob/master/SimilarityCount.py)
 
-To calculate the overall sentence similarity
+To calculate the overall sentence similarity, we add the number of common words with the sum of maximum values fetched earlier and multiply it with the sum of length of the two sentences. This is then divided to get by twice the product of lengths of the sentences to derive the final measure.
+
+```python
+sentencesimilarity= (len(common)+rhosum)*(m+n)/(2*m*n)
+print(sentencesimilarity)
+```
 
 
 ## Second Order Co-occurrence Pointwise Mutual Information (SOC-PMI)-
