@@ -72,8 +72,24 @@ else:
 ![Output](https://github.com/caffeine96/TextSemanticSimilarity/blob/master/TSS%20Snips/SyntacticSimilarityMatrix.png?raw=true)
 
 Next, we move to calculate the semantic similarity. We use SOC-PMI for the purpose. The details of the method are given in the next section. The SOC- PMI method returns a normalized semantic measure for each combination of words. These measures are stored in a matrix of size length of *s1* x length of *s2*. 
+```python
+if len(s2)<len(s1):
+	for i in s2:
+		semmat[i]={}
+		for j in s1:
+			semmat[i][j]=SemanticSimilarity(i,j,a,delta,gamma)
+else:
+	for i in s1:
+		semmat[i]={}
+		for j in s2:
+			semmat[i][j]=SemanticSimilarity(i,j,a,delta,gamma)
+```
+
+![Output](https://github.com/caffeine96/TextSemanticSimilarity/blob/master/TSS%20Snips/Semantic%20Matrix.png?raw=true)
 
 The two matrices are averaged. The resulting matrix is the searched for maximum value. Once the maximum value is found, it is stored and the row and column containing that column is eliminated. The process is repeated with the remaining matrix till the entire matrix gets eliminated. All the maximum values are summed over.
+
+![Output](https://github.com/caffeine96/TextSemanticSimilarity/blob/master/TSS%20Snips/Summation.png?raw=true)
 
 [Similarity Count Code](https://github.com/caffeine96/TextSemanticSimilarity/blob/master/SimilarityCount.py)
 
@@ -83,6 +99,7 @@ To calculate the overall sentence similarity, we add the number of common words 
 sentencesimilarity= (len(common)+rhosum)*(m+n)/(2*m*n)
 print(sentencesimilarity)
 ```
+![Output](https://github.com/caffeine96/TextSemanticSimilarity/blob/master/TSS%20Snips/SentenceSimilarity.png?raw=true)
 
 
 ## Second Order Co-occurrence Pointwise Mutual Information (SOC-PMI)-
