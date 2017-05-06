@@ -31,6 +31,7 @@ n=len(sent2)
 
 Common words in both the lists are identified and extracted. These common words are then subtracted from the original lists. Now, the syntactic and semantic similarlity tests measurement methods are operated on the remaing lists given below as *s1* and *s2*. Go on the link below for the Commonwords code:
 ```python
+from Auxiliary import Commonwords, DisplayMatrixform
 #Getting the list of common words and the removal of those words from the original list
 common,s1,s2=Commonwords(sent1,sent2)
 ```
