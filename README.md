@@ -68,4 +68,4 @@ for w in words:
 
 ![Words](https://github.com/caffeine96/TextSemanticSimilarity/blob/master/TSS%20Snips/Corpus%20Words.png?raw=true)
 
-![Corpus Training Code](https://github.com/caffeine96/TextSemanticSimilarity/blob/master/Corpus-Train.py)
+[Corpus Training Code](https://github.com/caffeine96/TextSemanticSimilarity/blob/master/Corpus-Train.py)
