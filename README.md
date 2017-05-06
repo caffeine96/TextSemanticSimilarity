@@ -19,6 +19,7 @@ sent1=clean(s1)
 sent2=clean(s2)
 
 ![Output](TextSemanticSimilarity/TSS Snips/Cleaning.png)
+[Cleaner Code](TextSemanticSimilarity/Cleaner.py)
 ```
 
 
