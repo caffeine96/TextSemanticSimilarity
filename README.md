@@ -23,3 +23,19 @@ sent2=clean(s2)
 [Cleaner Code](https://github.com/caffeine96/TextSemanticSimilarity/blob/master/Cleaner.py)
 
 
+Length of both the lists are maintained:
+```python 
+m=len(sent1)
+n=len(sent2)
+```
+
+Common words in both the lists are identified and extracted. These common words are then subtracted from the original lists. Now, the syntactic and semantic similarlity tests measurement methods are operated on the remaing lists given below as *s1* and *s2*. Go on the link below for the Commonwords code:
+```python
+#Getting the list of common words and the removal of those words from the original list
+common,s1,s2=Commonwords(sent1,sent2)
+```
+
+![Output]()
+
+[Commonwords Code](https://github.com/caffeine96/TextSemanticSimilarity/blob/master/Auxiliary.py)
+
