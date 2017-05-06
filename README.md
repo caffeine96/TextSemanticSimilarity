@@ -146,12 +146,12 @@ pmiw1={}
 pmiw1_sorted = sorted(pmiw1, key=pmiw1.get, reverse=True)
 ```
 
-Beta 1 and Beta 2 are calcuated. We have arranged the neighbour words in decreasing order of PMI. Now the values at the back tend to be very small and can be neglected. Hence we select only the first Beta 1 values. These become the *feature* words. 
+Beta 1 and Beta 2 are calcuated. We have arranged the neighbour words in decreasing order of PMI. Now the values at the back tend to be very small and can be neglected. Hence we select only the first Beta 1 values. These become the *feature* words. The value of delta has to be selected according to the corpus size. We have chosen a value of 0.7. 
 
 ```python
 b1= math.floor((math.pow(math.log10(typefr[w1]),2)* math.log(len(unique),2))/delta)
 ```
-Next we sum all the PMIs of the word neighbours common to both *w1* and *w2*. Again two values are maintained one is the Beta summation of *w1* and the other of *w2*. Next, the similarity measure is calculated by dividing betasum1 and betasum2 by beta1 and beta2 respectively and adding both the values.
+Next we sum all the PMIs of the word neighbours common to both *w1* and *w2*. Again two values are maintained one is the Beta summation of *w1* and the other of *w2*. Next, the similarity measure is calculated by dividing betasum1 and betasum2 by beta1 and beta2 respectively and adding both the values. Gamma is selected according to the how much one wants to stress upon the semantic similarity.
 
 ```python
 for i in range(0,b1):
