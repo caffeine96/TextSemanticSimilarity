@@ -52,8 +52,24 @@ Next, we need to find out the syntatic/lexical similarities between list of word
 2. Normalized Longest Common Consecutive Subsequence(NLCCS) from first letter- It takes the longest consecutive subsequence from the firt letter. For the semantic and semaantc it would be 4(sema). It is then normalized.
 3. Normalized Longest Common Consecutive Subsequence(NLCCS) from any letter-It takes the longest consecutive subsequence from the firt letter. For the semantic and semaantc it would again be 4(sema). It is then normalized.
 
-These measures are summed over using appropriate weights(which sum to 1) and the final syntactic matrix is created of size length of *s1* x length of *s2*. 
+[Syntactic Similarity Code](https://github.com/caffeine96/TextSemanticSimilarity/blob/master/SyntacticSimilarity.py)
 
+These measures are summed over using appropriate weights(which sum to 1) and the final syntactic matrix is created of size length of *s1* x length of *s2*. 
+```python
+synmat={}
+if len(s2)<len(s1):
+	for i in s2:
+		synmat[i]={}
+		for j in s1:
+			synmat[i][j]=SyntacticSimilarity(i,j)
+else:
+	for i in s1:
+		synmat[i]={}
+		for j in s2:
+			synmat[i][j]=SyntacticSimilarity(i,j)
+```
+
+![Output](https://github.com/caffeine96/TextSemanticSimilarity/blob/master/TSS%20Snips/SyntacticSimilarityMatrix.png?raw=true)
 
 Next, we move to calculate the semantic similarity. We use SOC-PMI for the purpose. The details of the method are given in the next section. The SOC- PMI method returns a normalized semantic measure for each combination of words. These measures are stored in a matrix of size length of *s1* x length of *s2*. 
 
