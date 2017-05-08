@@ -151,7 +151,7 @@ Beta 1 and Beta 2 are calcuated. We have arranged the neighbour words in decreas
 ```python
 b1= math.floor((math.pow(math.log10(typefr[w1]),2)* math.log(len(unique),2))/delta)
 ```
-Next we sum all the PMIs of the word neighbours common to both *w1* and *w2*. Again two values are maintained one is the Beta summation of *w1* and the other of *w2*. Next, the similarity measure is calculated by dividing betasum1 and betasum2 by beta1 and beta2 respectively and adding both the values. Gamma is selected according to the how much one wants to stress upon the semantic similarity.
+Next we sum all the PMIs of the word neighbours common to both *w1* and *w2*. Again two values are maintained one is the Beta summation of *w1* and the other of *w2*. Next, the similarity measure is calculated by dividing betasum1 and betasum2 by beta1 and beta2 respectively and adding both the values. Gamma is selected according to the how much one wants to stress upon the PMI values.
 
 ```python
 for i in range(0,b1):
@@ -185,3 +185,15 @@ def normalized_similarity(similarity,lmbda):
 	similarity/=lmbda
 	return similarity,lmbda
 ```
+
+
+## Outputs
+
+Varying Delta
+![Output](https://github.com/caffeine96/TextSemanticSimilarity/blob/master/TSS%20Snips/Varying%20Delta.jpg?raw=true)
+
+Varying Semantic Similarity Weight measure
+![Output](https://github.com/caffeine96/TextSemanticSimilarity/blob/master/TSS%20Snips/Varying%20Semantic%20Similarity%20Weight.jpg?raw=true)
+
+Varying Gamma
+![Output](https://github.com/caffeine96/TextSemanticSimilarity/blob/master/TSS%20Snips/Varying%20Gamma.jpg?raw=true)
