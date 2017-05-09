@@ -13,7 +13,7 @@ def nclcs1(a,b):
 	j=0;
 	# if(b.size()>a.size()):
 	# 	swap(a,b);
-	if len(b)>len(a):
+	if len(b)<len(a):
 		a,b = b,a
 
 	ans=0;
