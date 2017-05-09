@@ -11,8 +11,15 @@ def SemanticSimilarity(w1,w2,a,delta,gamma):
 	filtered_text= pickle.load(pkl_file)
 	pkl_file.close()
 
-	#Getting the unique words(types)
-	unique= unique_list(filtered_text)
+	
+	pkl_file2=open("Unique.pkl","rb")
+	unique= pickle.load(pkl_file2)
+	pkl_file2.close()
+	
+
+	pkl_file3=open("Type-Frequency.pkl","rb")
+	typefr= pickle.load(pkl_file3)
+	pkl_file3.close()
 	
 	m=len(filtered_text)
 
@@ -22,9 +29,7 @@ def SemanticSimilarity(w1,w2,a,delta,gamma):
 	#for w in unique:
 	#	typefr[w]=type_frequency(w,filtered_text)
 	
-	typefr=collections.Counter()
-	for w in filtered_text:
-		typefr[w]+=1
+	
 	#print(typefr)
 	if w1 not in unique:
 		return 0
