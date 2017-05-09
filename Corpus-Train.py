@@ -59,8 +59,6 @@ for w in words:
 	    filtered_text.append(w)
 #print(filtered_text)
 print("Corpus Words: ",len(filtered_text))
-unique=unique_list(filtered_text)
-print("Unique Words: ",len(unique))
 
 output = open("Corpus-Train.pkl","wb")
 pickle.dump(filtered_text,output,-1)
